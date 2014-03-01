@@ -1,6 +1,7 @@
 package edu.jainwickhamphillips;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName="monster_group")
@@ -16,15 +17,18 @@ public class MonsterGroup {
 	private String groupName;
 	@DatabaseField(columnName="ordinal")
 	private int ordinal;
+	@DatabaseField(foreign=true)
+	private Encounter owner;
 	
 	/** DO NOT USE - For ORM */
 	MonsterGroup() {}
 	
-	public MonsterGroup(Monster monsterType, int numMonsters, String groupName, int ordinal){
+	public MonsterGroup(Encounter owner, Monster monsterType, int numMonsters, String groupName, int ordinal){
 		this.setNumMonsters(numMonsters);
 		this.setMonsterType(monsterType);
 		this.setGroupName(groupName);
 		this.setOrdinal(ordinal);
+		this.setOwner(owner);
 	}
 	public int getNumMonsters() {
 		return numMonsters;
@@ -50,5 +54,13 @@ public class MonsterGroup {
 	}
 	public void setOrdinal(int ordinal) {
 		this.ordinal = ordinal;
+	}
+
+	public Encounter getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Encounter owner) {
+		this.owner = owner;
 	}
 }

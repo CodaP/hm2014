@@ -12,12 +12,15 @@ public class PlayerCharacter {
 	private String name;
 	@DatabaseField(columnName="ordinal")
 	private int ordinal;
+	@DatabaseField(foreign=true)
+	private Campaign owner;
 	
 	/** DO NOT USE - For ORM */
 	PlayerCharacter() {}
 	
-	public PlayerCharacter(String name){
-		this.name=name;
+	public PlayerCharacter(Campaign owner, String name){
+		this.setName(name);
+		this.setOwner(owner);
 	}
 	public int getId() {
 		return id;
@@ -38,6 +41,14 @@ public class PlayerCharacter {
 
 	public void setOrdinal(int ordinal) {
 		this.ordinal = ordinal;
+	}
+
+	public Campaign getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Campaign owner) {
+		this.owner = owner;
 	}
 	
 }

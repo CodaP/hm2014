@@ -44,7 +44,7 @@ public class Encounter {
 	
 	public void addMonsterGroup(Monster m){
 		String groupName = findName(m.toString()); //gets the name for the group to be added
-		MonsterGroup newGroup = new MonsterGroup(m, 1, groupName, groups.size());
+		MonsterGroup newGroup = new MonsterGroup(this, m, 1, groupName, groups.size());
 		groups.add(newGroup); //no checking because you can have multiple of the same group
 		//TODO:ORM - Save new MG
 	}
