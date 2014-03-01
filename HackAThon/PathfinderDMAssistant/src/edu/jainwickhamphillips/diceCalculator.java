@@ -1,5 +1,8 @@
 package edu.jainwickhamphillips;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public  class diceCalculator {
 	private static double totalDamage=0;
 	private static int diceType;
@@ -10,24 +13,22 @@ public  class diceCalculator {
 		totalDamage=0;
 		int diceDamage;
 		int constantDamage;
-		
-		if(damage<3){ //if damage is less than 3, no dice can add to equal it.
-			constantDamage=damage;
-			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
-		}
-			
+		variance/=100;
 		diceDamage=(int)(variance*damage +.5);
-		if(diceDamage<3){
+		
+		if(damage<3 || diceDamage<3){ //if damage/diceDamage is less than 3, no dice can add to equal it.
 			constantDamage=damage;
 			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
-		}
+		}	
+
 		int primaryDieNum=getDieNum(diceDamage, variance); //holds number of the primary die type
 		double temp=variance;
 		while(primaryDieNum==0){
-			temp=variance+=.2;
+			temp+=.1;
 			if(temp>=1)
 				temp=1;
 			primaryDieNum+=getDieNum(diceDamage, temp); //ensures primaryDieNum has a value != 0
+			
 		}
 		int primaryDieType=diceType;
 		totalDamage+=(primaryDieNum*(1+diceType)/2.0);
@@ -36,6 +37,15 @@ public  class diceCalculator {
 		int secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance);
 		int secondaryDieType=diceType;
 		totalDamage+=(primaryDieNum*(1+diceType)/2.0);
+		temp=.2;
+		if(secondaryDieNum==0){
+			secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance+temp);
+		}
+		temp=.4;
+		if(secondaryDieNum==0){
+			secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance+temp);
+		}
+		
 		
 	
 		assignValue(primaryDieType, primaryDieNum);
@@ -49,12 +59,13 @@ public  class diceCalculator {
 	}
 	private static int getDieNum(int damage, double variance){
 		int[] numberOfDice = new int[5];
-		numberOfDice[0]=(int)(damage/((1+dieGroup.D12)/2)); 	//d12
-		numberOfDice[1]=(int)(damage/((1+dieGroup.D10)/2)); 	//d10
-		numberOfDice[2]=(int)(damage/((1+dieGroup.D8)/2));  	//d8
-		numberOfDice[3]=(int)(damage/((1+dieGroup.D6)/2));		//d6
-		numberOfDice[4]=(int)(damage/((1+dieGroup.D4)/2));		//d4
+		numberOfDice[0]=(int)(damage/((1+dieGroup.D12)/2.0)); 	//d12
+		numberOfDice[1]=(int)(damage/((1+dieGroup.D10)/2.0)); 	//d10
+		numberOfDice[2]=(int)(damage/((1+dieGroup.D8)/2.0));  	//d8
+		numberOfDice[3]=(int)(damage/((1+dieGroup.D6)/2.0));		//d6
+		numberOfDice[4]=(int)(damage/((1+dieGroup.D4)/2.0));		//d4
 		int index=(int)(variance*4.999) ; //gives me best fit. 
+		
 		if(index==0)
 			diceType=12;
 		else if(index==1)

@@ -178,38 +178,7 @@
     
     
     
-    
-    
-    <LinearLayout
-        android:id="@+id/LinearLayout_DamageLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/TextView_CRdescription"
-        android:layout_below="@+id/LinearLayout_AttackLayout">
 
-        <TextView
-            android:id="@+id/textView_Damagedescriptor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Damage"
-            android:textSize="20sp" />
-
-        <SeekBar
-            android:id="@+id/seekBar_Damageslider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:max="100"
-            android:progress="50"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/textView_CurrentDamage"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:text="Cur"
-            android:textSize="20sp" />
-    </LinearLayout>  
     
     
     
@@ -220,7 +189,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignRight="@+id/TextView_CRdescription"
-        android:layout_below="@+id/LinearLayout_DamageLayout">
+        android:layout_below="@+id/LinearLayout_AttackLayout">
 
         <TextView
             android:id="@+id/textView_PrimaryDCdescriptor"
