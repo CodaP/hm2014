@@ -1,12 +1,13 @@
 package edu.jainwickhamphillips;
 
+import android.annotation.SuppressLint;
 import java.util.HashMap;
 import java.util.Map;
 
 
 
 public class dieGroup {
-	private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
+	@SuppressLint("UseSparseArrays") private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
 	static final int D4=4;
 	static final int D6=6;
 	static final int D8=8;
