@@ -1,0 +1,163 @@
+#
+# generated on 2014/03/01 06:22:41
+#
+# --table-start--
+dataClass=edu.jainwickhamphillips.Campaign
+tableName=campaign
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=charactersFC
+foreignCollection=true
+foreignCollectionEager=true
+foreignCollectionOrderColumnName=ordinal
+# --field-end--
+# --field-start--
+fieldName=campaignName
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=edu.jainwickhamphillips.dieGroup
+tableName=die_group
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=dice
+dataPersister=SERIALIZABLE
+# --field-end--
+# --field-start--
+fieldName=damageConstant
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=edu.jainwickhamphillips.Encounter
+tableName=encounter
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=groupsFC
+foreignCollection=true
+foreignCollectionEager=true
+foreignCollectionOrderColumnName=ordinal
+# --field-end--
+# --field-start--
+fieldName=encounterName
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=edu.jainwickhamphillips.Monster
+tableName=monster
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=challengeRating
+# --field-end--
+# --field-start--
+fieldName=health
+# --field-end--
+# --field-start--
+fieldName=armorClass
+# --field-end--
+# --field-start--
+fieldName=attack
+# --field-end--
+# --field-start--
+fieldName=damage
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=primaryDC
+# --field-end--
+# --field-start--
+fieldName=secondaryDC
+# --field-end--
+# --field-start--
+fieldName=goodSave
+# --field-end--
+# --field-start--
+fieldName=poorSave
+# --field-end--
+# --field-start--
+fieldName=variance
+# --field-end--
+# --field-start--
+fieldName=initiative
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=skills
+dataPersister=SERIALIZABLE
+# --field-end--
+# --field-start--
+fieldName=spells
+dataPersister=SERIALIZABLE
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=edu.jainwickhamphillips.MonsterGroup
+tableName=monster_group
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=numMonsters
+# --field-end--
+# --field-start--
+fieldName=monsterType
+foreign=true
+# --field-end--
+# --field-start--
+fieldName=groupName
+# --field-end--
+# --field-start--
+fieldName=ordinal
+columnName=ordinal
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=edu.jainwickhamphillips.PlayerCharacter
+tableName=player_character
+# --table-fields-start--
+# --field-start--
+fieldName=id
+canBeNull=false
+id=true
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+canBeNull=false
+# --field-end--
+# --field-start--
+fieldName=ordinal
+columnName=ordinal
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

@@ -11,13 +11,16 @@ public  class diceCalculator {
 		int diceDamage;
 		int constantDamage;
 		
-		if(damage<3){
+		if(damage<3){ //if damage is less than 3, no dice can add to equal it.
 			constantDamage=damage;
 			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
 		}
 			
 		diceDamage=(int)(variance*damage +.5);
-		
+		if(diceDamage<3){
+			constantDamage=damage;
+			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
+		}
 		int primaryDieNum=getDieNum(diceDamage, variance); //holds number of the primary die type
 		double temp=variance;
 		while(primaryDieNum==0){
