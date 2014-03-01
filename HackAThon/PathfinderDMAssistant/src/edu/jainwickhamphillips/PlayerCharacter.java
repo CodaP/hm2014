@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "player_character")
 public class PlayerCharacter {
 	
-	@DatabaseField(id = true, generatedId = true, canBeNull = false)
+	@DatabaseField(generatedId = true)
 	private int id;
 	@DatabaseField(canBeNull = false)
 	private String name;

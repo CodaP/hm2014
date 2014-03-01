@@ -1,12 +1,14 @@
 package edu.jainwickhamphillips;
 
-import android.app.Activity;
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
+
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
-public class MainMenu extends Activity {
+public class MainMenu extends OrmLiteBaseActivity<Database> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

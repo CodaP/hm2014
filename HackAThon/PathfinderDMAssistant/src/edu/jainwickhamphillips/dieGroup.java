@@ -26,7 +26,7 @@ public class dieGroup implements Serializable{
 	
 	@SuppressLint("UseSparseArrays")
 	@DatabaseField(dataType = DataType.SERIALIZABLE)
-	private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
+	private HashMap<Integer,Integer> dice = new HashMap<Integer, Integer>();
 	
 	@DatabaseField
 	private int damageConstant;
@@ -39,7 +39,7 @@ public class dieGroup implements Serializable{
 		dice.put(D12,0);
 		damageConstant=0;
 	}
-	public dieGroup(int d4,int d6, int d8, int d10, int d12, int constant){
+	public dieGroup(int constant,int d12, int d10, int d8, int d6, int d4){
 		dice.put(D4,d4);
 		dice.put(D6,d6);
 		dice.put(D8,d8);

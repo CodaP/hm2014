@@ -23,6 +23,9 @@ public class Campaign {
 	
 	@DatabaseField
 	private String campaignName;
+	public Campaign(){
+		//left null for martins reasons
+	}
 	
 	public Campaign(String name){
 		characters=new ArrayList<PlayerCharacter>();

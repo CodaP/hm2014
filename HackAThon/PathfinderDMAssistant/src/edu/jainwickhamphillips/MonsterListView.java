@@ -25,14 +25,15 @@ public class MonsterListView extends OrmLiteBaseListActivity<Database> {
 		setContentView(R.layout.activity_monster_list_view);
 	}
 	
-	@SuppressWarnings("unused")
-	private void createMonster(View v) {
+	
+	public void createMonster(View view) {
 		Intent intent = new Intent(this, MonsterBuilderOne.class);
 		this.startActivity(intent);
 	}
 	
 	@Override
 	protected void onStart() {
+		super.onStart();
 		try {
 			monsters.clear();
 			CloseableIterator<Monster> mons = getHelper().getDao(Monster.class).closeableIterator();

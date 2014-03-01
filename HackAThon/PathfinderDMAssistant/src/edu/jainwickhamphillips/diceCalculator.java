@@ -34,14 +34,14 @@ public  class diceCalculator {
 		totalDamage+=(primaryDieNum*(1+diceType)/2.0);
 		
 		
-		int secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance);
+		int secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance+.2); //+.2
 		int secondaryDieType=diceType;
-		totalDamage+=(primaryDieNum*(1+diceType)/2.0);
-		temp=.2;
-		if(secondaryDieNum==0){
+		totalDamage+=(secondaryDieNum*(1+diceType)/2.0); //secondary
+		temp=.4;
+		if(secondaryDieNum==0){ //bounds check assign vars
 			secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance+temp);
 		}
-		temp=.4;
+		temp=.6; //bounds check assign vars
 		if(secondaryDieNum==0){
 			secondaryDieNum=getDieNum((int)(diceDamage-totalDamage),variance+temp);
 		}

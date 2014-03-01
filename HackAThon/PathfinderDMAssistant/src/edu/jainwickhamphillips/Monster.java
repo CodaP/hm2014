@@ -38,9 +38,9 @@ public class Monster implements Serializable {
 	@DatabaseField
 	private String name;
 	@DatabaseField(dataType = DataType.SERIALIZABLE)
-	private List<String> skills = new ArrayList<String>();
+	private ArrayList<String> skills = new ArrayList<String>();
 	@DatabaseField(dataType = DataType.SERIALIZABLE)
-	private List<String> spells = new ArrayList<String>();
+	private ArrayList<String> spells = new ArrayList<String>();
 	
 	/** DO NOT USE - For ORM */
 	Monster() {}
