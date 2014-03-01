@@ -1,5 +1,8 @@
 package edu.jainwickhamphillips;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Monster {
 	
 	private int challengeRating;
@@ -13,11 +16,14 @@ public class Monster {
 	private int poorSave;
 	private double variance; //values from 0-1
 	private int initiative;
+	private String name;
+	private List<String> skills = new ArrayList<String>();
+	private List<String> spells = new ArrayList<String>();
 	
 	public Monster(){
 		
 	}
-	public Monster(int cr, int hp, int ac, int attack, dieGroup damage, int pDC, int sDC, int gs, int ps, int var, int ini){
+	public Monster(String name,int cr, int hp, int ac, int attack, dieGroup damage, int pDC, int sDC, int gs, int ps, int var, int ini){
 		challengeRating=cr;
 		health=hp;
 		armorClass=ac;
@@ -29,7 +35,31 @@ public class Monster {
 		poorSave=ps;
 		variance=var;
 		initiative=ini;
+		this.setName(name);
 	}
+	public void addSkill(String s){
+		if(!skills.contains(s))
+			skills.add(s);
+	}
+	public void removeSkill(String s){
+		if(skills.contains(s))
+			skills.remove(s);
+	}
+	public List<String> getSkills(){
+		return skills;
+	}
+	public void addSpell(String s){
+		if(!spells.contains(s))
+			spells.add(s);
+	}
+	public void removeSpell(String s){
+		if(spells.contains(s))
+			spells.remove(s);
+	}
+	public List<String> getSpells(){
+		return spells;
+	}
+	
 	public void setCR(int cr){
 		challengeRating=cr;
 	}
@@ -95,6 +125,12 @@ public class Monster {
 	}
 	public void setInitiative(int initiative) {
 		this.initiative = initiative;
+	}
+	public String toString() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

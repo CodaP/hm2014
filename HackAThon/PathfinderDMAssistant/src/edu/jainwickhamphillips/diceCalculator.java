@@ -11,7 +11,7 @@ public  class diceCalculator {
 		int diceDamage;
 		int constantDamage;
 		
-		if(damage<3){
+		if(damage<3){ //if damage is less than 3, no dice can add to equal it.
 			constantDamage=damage;
 			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
 		}
