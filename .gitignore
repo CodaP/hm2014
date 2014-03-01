@@ -15,4 +15,4 @@ proguard/
 *.classpath
 *.project
 .settings/
-*.jar
+android-support-v4.jar

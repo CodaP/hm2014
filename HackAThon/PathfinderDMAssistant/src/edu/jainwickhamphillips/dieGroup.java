@@ -1,18 +1,32 @@
 package edu.jainwickhamphillips;
 
-import android.annotation.SuppressLint;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.annotation.SuppressLint;
+
+import com.j256.ormlite.field.DataType;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 
+@DatabaseTable(tableName="die_group")
 public class dieGroup {
-	@SuppressLint("UseSparseArrays") private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
+	
 	static final int D4=4;
 	static final int D6=6;
 	static final int D8=8;
 	static final int D10=10;
 	static final int D12=12;
+
+	@DatabaseField(generatedId = true)
+	int id;
+	
+	@SuppressLint("UseSparseArrays")
+	@DatabaseField(dataType = DataType.SERIALIZABLE)
+	private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
+	
+	@DatabaseField
 	private int damageConstant;
 	
 	public dieGroup(){

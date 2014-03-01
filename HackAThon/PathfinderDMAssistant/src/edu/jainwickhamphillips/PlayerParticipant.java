@@ -1,5 +1,6 @@
 package edu.jainwickhamphillips;
 
+
 public class PlayerParticipant extends FightParticipant {
 	
 	private PlayerCharacter character;
