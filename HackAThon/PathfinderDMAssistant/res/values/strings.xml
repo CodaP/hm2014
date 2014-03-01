@@ -6,5 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_monster_list_view">MonsterListView</string>
     <string name="open_helper_classname">edu.jainwickhamphillips.Database</string>
+    <string name="title_activity_encounter_list">EncounterList</string>
+    <string name="title_activity_encounter_edit">EncounterEdit</string>
 
 </resources>

@@ -26,9 +26,24 @@
         </activity>
         <activity android:name="edu.jainwickhamphillips.MonsterBuilderTwo" >
         </activity>
-          <activity android:name="edu.jainwickhamphillips.MonsterListView" >
+        <activity android:name="edu.jainwickhamphillips.MonsterListView" >
         </activity>
-
+        <activity
+            android:name="edu.jainwickhamphillips.EncounterList"
+            android:label="@string/title_activity_encounter_list"
+            android:parentActivityName="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" />
+        </activity>
+        <activity
+            android:name="edu.jainwickhamphillips.EncounterEdit"
+            android:label="@string/title_activity_encounter_edit"
+            android:parentActivityName="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" />
+        </activity>
     </application>
 
 </manifest>

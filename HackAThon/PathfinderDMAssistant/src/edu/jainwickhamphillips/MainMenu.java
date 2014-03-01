@@ -29,4 +29,9 @@ public class MainMenu extends OrmLiteBaseActivity<Database> {
     	startActivity(intent);
     }
     
+    public void viewEncounters(View view) {
+    	Intent intent = new Intent(this, EncounterList.class);
+    	startActivity(intent);
+    }
+    
 }
