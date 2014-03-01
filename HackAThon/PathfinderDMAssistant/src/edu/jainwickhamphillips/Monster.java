@@ -1,13 +1,16 @@
 package edu.jainwickhamphillips;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 
-public class Monster {
+public class Monster implements Serializable {
 	
+	private static final long serialVersionUID = 6510943296975272639L;
+
 	@DatabaseField(generatedId = true)
 	private int id;
 	@DatabaseField
