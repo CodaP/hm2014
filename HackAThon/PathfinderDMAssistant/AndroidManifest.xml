@@ -22,14 +22,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity
-            android:name="edu.jainwickhamphillips.MonsterBuilderOne">
+        <activity android:name="edu.jainwickhamphillips.MonsterBuilderOne" >
         </activity>
-        
+        <activity android:name="edu.jainwickhamphillips.MonsterBuilderTwo" >
+        </activity>
         <activity
-            android:name="edu.jainwickhamphillips.MonsterBuilderTwo" >
-            
+            android:name="edu.jainwickhamphillips.MonsterListView"
+            android:label="@string/title_activity_monster_list_view"
+            android:parentActivityName="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.j256.ormlite.android.apptools.OrmLiteBaseListActivity" />
         </activity>
     </application>
 

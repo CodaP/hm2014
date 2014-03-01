@@ -23,7 +23,7 @@ public class MainMenu extends Activity {
         return true;
     }
     public void goToMonster(View view){
-    	Intent intent = new Intent(this, MonsterBuilderOne.class);
+    	Intent intent = new Intent(this, MonsterListView.class);
     	startActivity(intent);
     }
     

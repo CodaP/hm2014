@@ -22,6 +22,11 @@ public class Database extends OrmLiteSqliteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db, ConnectionSource conn) {
 		try {
+			TableUtils.createTableIfNotExists(conn, Campaign.class);
+			TableUtils.createTableIfNotExists(conn, dieGroup.class);
+			TableUtils.createTableIfNotExists(conn, Encounter.class);
+			TableUtils.createTableIfNotExists(conn, Monster.class);
+			TableUtils.createTableIfNotExists(conn, MonsterGroup.class);
 			TableUtils.createTableIfNotExists(conn, PlayerCharacter.class);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -32,6 +37,7 @@ public class Database extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase arg0, ConnectionSource arg1, int arg2,
 			int arg3) {
 		//NOPE
+		onCreate(arg0, arg1);
 	}
 
 }
