@@ -57,6 +57,8 @@
         <SeekBar
             android:id="@+id/seekBar_Variance"
             android:layout_width="match_parent"
+            android:progress="50"
+            android:max="100"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -86,8 +88,10 @@
             android:textSize="15sp" />
 
         <SeekBar
-            android:id="@+id/seekBar1"
+            android:id="@+id/seekBar_Initiativeslider"
             android:layout_width="match_parent"
+            android:progress="50"
+            android:max="100"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
@@ -99,5 +103,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:text="Save Monster" />
+
+    <TextView
+        android:id="@+id/textView_CRTEST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:text="getValue" />
 
 </RelativeLayout>

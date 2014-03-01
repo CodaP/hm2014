@@ -88,6 +88,8 @@
             android:id="@+id/seekBar_HPslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -124,6 +126,8 @@
             android:id="@+id/seekBar_ACslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -160,6 +164,8 @@
             android:id="@+id/seekBar_Attackslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -193,6 +199,8 @@
             android:id="@+id/seekBar_Damageslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -225,6 +233,8 @@
             android:id="@+id/seekBar_PrimaryDCslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -257,6 +267,8 @@
             android:id="@+id/seekBar_SecondaryDCslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -291,6 +303,8 @@
             android:id="@+id/seekBar_GoodSaveslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView
@@ -326,6 +340,8 @@
             android:id="@+id/seekBar_PoorSaveslider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
             android:layout_weight="1" />
 
         <TextView

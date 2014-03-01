@@ -17,7 +17,10 @@ public  class diceCalculator {
 		}
 			
 		diceDamage=(int)(variance*damage +.5);
-		
+		if(diceDamage<3){
+			constantDamage=damage;
+			return(new dieGroup(constantDamage,d12,d10,d8,d6,d4));
+		}
 		int primaryDieNum=getDieNum(diceDamage, variance); //holds number of the primary die type
 		double temp=variance;
 		while(primaryDieNum==0){

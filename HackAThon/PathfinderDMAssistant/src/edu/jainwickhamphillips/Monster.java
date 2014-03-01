@@ -1,10 +1,15 @@
 package edu.jainwickhamphillips;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Monster {
+public class Monster implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6510943296975272639L;
 	private int challengeRating;
 	private int health;
 	private int armorClass;

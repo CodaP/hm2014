@@ -1,12 +1,18 @@
 package edu.jainwickhamphillips;
 
 import android.annotation.SuppressLint;
+
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 
 
-public class dieGroup {
+public class dieGroup implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@SuppressLint("UseSparseArrays") private Map<Integer,Integer> dice = new HashMap<Integer, Integer>();
 	static final int D4=4;
 	static final int D6=6;
