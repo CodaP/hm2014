@@ -10,6 +10,8 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 
 import com.j256.ormlite.android.apptools.OrmLiteBaseListActivity;
@@ -23,6 +25,15 @@ public class MonsterListView extends OrmLiteBaseListActivity<Database> {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_monster_list_view);
+		getListView().setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View text, int index,
+					long id) {
+				Intent intent = new Intent(this, MonsterViewer.class);
+				intent.putExtra("MB-Info-Part-One", monsters.get(index));
+				startActivity(intent);
+			}
+		});
 	}
 	
 	
