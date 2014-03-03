@@ -129,21 +129,23 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView_CRTEST"
+        android:id="@+id/textView_nameDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:text="getValue" />
-
-    <Button
-        android:id="@+id/button_testing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView_CRTEST"
         android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="26dp"
-        android:onClick="testing"
-        android:text="Button" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Name the Monster Below."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editText_monsterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_nameDescription"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="15sp" />
 
 </RelativeLayout>

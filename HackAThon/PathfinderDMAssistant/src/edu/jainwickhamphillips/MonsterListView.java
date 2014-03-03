@@ -29,7 +29,7 @@ public class MonsterListView extends OrmLiteBaseListActivity<Database> {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View text, int index,
 					long id) {
-				Intent intent = new Intent(this, MonsterViewer.class);
+				Intent intent = new Intent(MonsterListView.this, MonsterViewer.class);
 				intent.putExtra("MB-Info-Part-One", monsters.get(index));
 				startActivity(intent);
 			}

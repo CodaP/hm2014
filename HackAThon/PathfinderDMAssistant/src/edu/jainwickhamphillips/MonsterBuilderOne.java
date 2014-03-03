@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 public class MonsterBuilderOne extends Activity {
 	//http://paizo.com/PRD/monsters/monsterCreation.html
@@ -30,16 +31,26 @@ public class MonsterBuilderOne extends Activity {
 		Intent intent = new Intent(this, MonsterBuilderTwo.class);
 		Log.d("Test","middle Advance Page");
 		Monster toSend=getMonsterData();
+		if(toSend==null){
+			return;
+		}
 		Log.d("Test","other middle Advance Page");
 		intent.putExtra("MB-Info-Part-One", toSend);
 		Log.d("Test","end Advance Page");
 		startActivity(intent);
 	}
 	private Monster getMonsterData(){
+		EditText crValue=(EditText)findViewById(R.id.EditView_CRnumber);
+		int challengeRating=Integer.parseInt(crValue.getText().toString());
+		if(challengeRating<1 || challengeRating>20){
+			Toast toast = Toast.makeText(getApplicationContext(), "CR must be between 1 and 20", Toast.LENGTH_SHORT);
+			toast.show();
+			return null;
+		}
 		Log.d("Test","Start monster");
 		Monster toPass=new Monster();
 		Log.d("Test","end monster Page");
-		EditText crValue=(EditText)findViewById(R.id.EditView_CRnumber);
+		
 		
 		SeekBar hpBar=(SeekBar)findViewById(R.id.seekBar_HPslider);
 		SeekBar ac=(SeekBar)findViewById(R.id.seekBar_ACslider);
@@ -52,7 +63,9 @@ public class MonsterBuilderOne extends Activity {
 		Log.d("Test","got Sieks");
 		
 		
-		int challengeRating=Integer.parseInt(crValue.getText().toString());
+
+
+			
 		Log.d("Test","got int");
 		toPass.setCR(challengeRating);
 		toPass.setHealth(getModifier(HITPOINTS[challengeRating-1]*.7,HITPOINTS[challengeRating-1]*1.3,hpBar.getProgress()));
